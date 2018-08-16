@@ -14,6 +14,10 @@ module.exports = {
     port: 4444,
     cli_args: {
       'webdriver.chrome.driver': require('chromedriver').path
+    },
+    request_timeout_options: {
+      timeout: 300000, //5 mins
+      retry_attempts: 5  // 5 attempts after each timeout of the request
     }
   },
 
