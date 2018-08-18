@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <ul>
+      <li><router-link to="/">Users</router-link></li>
+      <li><router-link to="/test">Test</router-link></li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Test from './components/test'
+import Users from './components/users'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Test, Users
+  }
 }
 </script>
 
