@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <ul>
-      <li><router-link to="/">Users</router-link></li>
-      <li><router-link to="/test">Test</router-link></li>
-    </ul>
-    <router-view></router-view>
+    <navigation-link/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Test from './components/test'
-import Users from './components/users'
+import Test from './components/Test'
+import Users from './components/Users'
+import NavigationLink from './components/NavigationLink'
 
 export default {
   name: 'App',
   components: {
-    Test, Users
+    Test, Users, NavigationLink
   }
 }
 </script>
