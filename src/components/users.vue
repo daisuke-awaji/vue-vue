@@ -45,6 +45,7 @@ export default {
   created: function () {
     this.$http.get('https://jsonplaceholder.typicode.com/users').then(function (responce) {
       this.users = responce.data
+      console.log(responce.data)
     })
   }
 }

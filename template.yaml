@@ -58,6 +58,17 @@ Resources:
           - s3:PutObjectAcl
           Resource:
           - !Sub ${S3Bucket.Arn}/*
+  RekognitionPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Effect: Allow
+          Action:
+          - rekognition:*
+          Resource:
+          - '*'
 
   UnauthenticatedRole:
     Type: AWS::IAM::Role
@@ -78,6 +89,7 @@ Resources:
       ManagedPolicyArns:
       - !Ref UnauthenticatedPolicy
       - !Ref PutS3Policy
+      - !Ref RekognitionPolicy
   AuthenticatedPolicy:
     Type: AWS::IAM::ManagedPolicy
     Properties:
